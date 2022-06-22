@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 
 public class Buttons : MonoBehaviour
@@ -17,7 +18,10 @@ public class Buttons : MonoBehaviour
     public Slider slider;
     public GameObject sliderObject;
     public Animator animator;
-    public Button ClickButton;
+    public Color ButtonColour;
+    public Color DefaultButtonColour;
+    public Image ImageColour;
+    public bool isPressed = false;
 
     void Start()
     {
@@ -26,6 +30,16 @@ public class Buttons : MonoBehaviour
 
     public void Update()
     {
+        if (isPressed)
+        {
+            ImageColour.color = ButtonColour;
+        }
+        else if(!isPressed)
+        {
+            ImageColour.color = DefaultButtonColour;
+        }
+
+
         //clickAmount = slider.value;
 
         count.text = clickCount + "";
@@ -72,10 +86,17 @@ public class Buttons : MonoBehaviour
         currentTime = 0;
         timerActive = false;
     }
-
-/*    public void ChangeColour(object sender, EventArgs e)
+    public void OnPointerDown()
     {
-        ClickButton.pressedColor = Color.white;
-    }*/
+        isPressed = true;
+        //Debug.Log("checkDown");
 
+    }
+
+    public void OnPointerUp()
+    {
+        isPressed = false;
+        //Debug.Log("checkUp");
+
+    }
 }
