@@ -10,7 +10,7 @@ public class ShopManager : MonoBehaviour
     public UnlockableMatrix unlockableMatrix;
     public SelectableMatrix selectableMatrix;
 
-    public TMP_Text FirstButtonPrice;
+    public TMP_Text FirstButtonPrice, SecondButtonPrice;
     public Sprite lockedImage, unlockedImage;
     public Button firstButtonCheck; // BUTTONS!
     public Image firstButtonStatusIcon, secondButtonStatusIcon;
@@ -23,12 +23,8 @@ public class ShopManager : MonoBehaviour
 
     void Start()
     {
-        Debug.Log(PlayerPrefs.GetInt("SecondItem"));
-
-
-        //PlayerPrefs.SetInt("SpentCoins", 0);//---------------------------------------RESET SPENT COINS
-        FirstButtonPrice.text = priceOfFirstItem.ToString() + " Coins"; 
-        //PlayerPrefs.SetInt("Coins", 100); //---------------------------------------MY COINTS CURRENTLY
+        FirstButtonPrice.text = priceOfFirstItem.ToString() + " Coins";
+        SecondButtonPrice.text = priceOffSecondItem.ToString() + " Coins";
 
         //-----------------------------------------------------------------------------------------
         unlockMatrixPath = $"{Application.persistentDataPath}/UnlockMatrix.json";
@@ -111,10 +107,6 @@ public class ShopManager : MonoBehaviour
 
     }
 
-
-
-
-
     public void RerenderShop()
     {
         if(unlockableMatrix.hasFirstButton)
@@ -169,4 +161,5 @@ public class ShopManager : MonoBehaviour
     {
         RerenderShop();
     }
+
 }

@@ -26,6 +26,11 @@ public class UIButtons : MonoBehaviour
         SceneManager.LoadScene("CUSTOMIZATION");
     }
 
+    public void Stats()
+    {
+        SceneManager.LoadScene("STATS");
+    }
+
     public void Exit()
     {
         Application.Quit();

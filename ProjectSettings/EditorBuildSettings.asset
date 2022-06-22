@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/CUSTOMIZATION.unity
     guid: 43dd30aee4a7c9447b3246a4cfc469f4
   - enabled: 1
+    path: Assets/Scenes/STATS.unity
+    guid: f472f1fff76391d4e9b5dd24ac960945
+  - enabled: 1
     path: Assets/Scenes/SETTINGS.unity
     guid: 90fcbc01dd2d5ce419d78379ac26f5fb
   - enabled: 1

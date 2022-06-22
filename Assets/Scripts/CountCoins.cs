@@ -32,4 +32,13 @@ public class CountCoins : MonoBehaviour
     {
         clickCount++;
     }
+
+    public void ResetAll()
+    {
+        PlayerPrefs.SetInt("SecondItem", 0);
+        //unlockableMatrix.hasFirstButton = false;
+        SpentCoins = 0;
+        clickCount = 0;
+        PlayerPrefs.SetInt("SpentCoins", 0);
+    }
 }
